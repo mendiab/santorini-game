@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="gameMainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="977.0" prefWidth="1042.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tnt.gui.GameView">
+   <children>
+      <GridPane fx:id="gameBoardGridPane" alignment="BASELINE_CENTER" layoutX="192.0" layoutY="22.0" prefHeight="704.0" prefWidth="743.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <opaqueInsets>
+            <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+         </opaqueInsets>
+         <children>
+            <StackPane prefHeight="143.0" prefWidth="144.0">
+               <children>
+                  <ImageView fitHeight="143.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../map-tiles/00.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="1">
+               <children>
+                  <ImageView fitHeight="143.0" fitWidth="157.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../map-tiles/01.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="2">
+               <children>
+                  <ImageView fitHeight="145.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../map-tiles/02.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="3">
+               <children>
+                  <ImageView fitHeight="144.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../map-tiles/03.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="4">
+               <children>
+                  <ImageView fitHeight="142.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../map-tiles/04.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane GridPane.rowIndex="1">
+               <children>
+                  <ImageView fitHeight="143.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../map-tiles/10.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <ImageView fitHeight="143.0" fitWidth="157.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../map-tiles/11.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <ImageView fitHeight="145.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../map-tiles/12.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <children>
+                  <ImageView fitHeight="144.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../map-tiles/13.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <children>
+                  <ImageView fitHeight="142.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../map-tiles/14.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane GridPane.rowIndex="2">
+               <children>
+                  <ImageView fitHeight="143.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../map-tiles/20.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <ImageView fitHeight="143.0" fitWidth="157.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../map-tiles/21.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <children>
+                  <ImageView fitHeight="145.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../map-tiles/22.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <children>
+                  <ImageView fitHeight="144.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../map-tiles/23.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <children>
+                  <ImageView fitHeight="142.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../map-tiles/24.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane GridPane.rowIndex="3">
+               <children>
+                  <ImageView fitHeight="143.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../map-tiles/30.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <ImageView fitHeight="143.0" fitWidth="157.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../map-tiles/31.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <children>
+                  <ImageView fitHeight="145.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../map-tiles/32.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <children>
+                  <ImageView fitHeight="144.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../map-tiles/33.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <children>
+                  <ImageView fitHeight="142.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../map-tiles/34.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane GridPane.rowIndex="4">
+               <children>
+                  <ImageView fitHeight="143.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../map-tiles/40.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <ImageView fitHeight="143.0" fitWidth="157.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../map-tiles/41.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <children>
+                  <ImageView fitHeight="145.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../map-tiles/42.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <children>
+                  <ImageView fitHeight="144.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../map-tiles/43.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <children>
+                  <ImageView fitHeight="142.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../map-tiles/44.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+         </children>
+      </GridPane>
+      <HBox layoutX="192.0" layoutY="789.0" prefHeight="102.0" prefWidth="743.0">
+         <children>
+            <TextArea fx:id="messageToPlayer" prefHeight="123.0" prefWidth="546.0" wrapText="true" />
+            <Button fx:id="gameRestartButton" mnemonicParsing="false" onAction="#restartGame" prefHeight="25.0" prefWidth="129.0" text="Restart Game">
+               <HBox.margin>
+                  <Insets left="45.0" top="35.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <Label layoutX="14.0" layoutY="805.0" prefHeight="70.0" prefWidth="167.0" text="Message To Player">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <fx:include fx:id="firstPlayerView" layoutX="935.0" layoutY="23.0" source="player-view.fxml" />
+      <fx:include fx:id="secondPlayerView" layoutX="935.0" layoutY="400.0" source="player-view.fxml" />
+      <fx:include fx:id="gameBuidingBlocksView" source="game-building-blocks-view.fxml" />
+   </children>
+</AnchorPane>

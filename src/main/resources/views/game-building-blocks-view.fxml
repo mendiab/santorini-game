@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tnt.gui.GameBuildingBlocksView">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Building Blocs Remaining Number" textAlignment="CENTER" wrappingWidth="166.8125">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="20.0" top="20.0" />
+         </VBox.margin>
+      </Text>
+      <FlowPane prefHeight="450.0" prefWidth="64.0">
+         <children>
+            <ImageView fx:id="levelOneBuidingBlock" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#onLevelOneBuidingBlockClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../building-blocs/block1.png" />
+               </image>
+               <FlowPane.margin>
+                  <Insets left="10.0" />
+               </FlowPane.margin>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Level-1: " textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <FlowPane.margin>
+                  <Insets left="40.0" />
+               </FlowPane.margin>
+            </Text>
+            <Text fx:id="levelOneRemainingBlocksCount" layoutX="10.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="levelTwoBuidingBlock" fitHeight="150.0" fitWidth="200.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#onLevelTwoBuidingBlockClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../building-blocs/block2.png" />
+               </image>
+               <FlowPane.margin>
+                  <Insets left="10.0" top="20.0" />
+               </FlowPane.margin>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Level-2: ">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <FlowPane.margin>
+                  <Insets left="40.0" />
+               </FlowPane.margin>
+            </Text>
+            <Text fx:id="levelTwoRemainingBlocksCount" layoutX="10.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="levelThreeBuidingBlock" fitHeight="150.0" fitWidth="200.0" layoutX="10.0" layoutY="160.0" onMouseClicked="#onLevelThreeBuidingBlockClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../building-blocs/block3.png" />
+               </image>
+               <FlowPane.margin>
+                  <Insets left="10.0" top="20.0" />
+               </FlowPane.margin>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Level-3: ">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <FlowPane.margin>
+                  <Insets left="40.0" />
+               </FlowPane.margin>
+            </Text>
+            <Text fx:id="levelThreeRemainingBlocksCount" layoutX="10.0" layoutY="505.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="domBuidingBlock" fitHeight="108.0" fitWidth="108.0" layoutX="10.0" layoutY="310.0" onMouseClicked="#onDomBuildingBlockClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../building-blocs/dome.png" />
+               </image>
+               <FlowPane.margin>
+                  <Insets left="30.0" top="10.0" />
+               </FlowPane.margin>
+            </ImageView>
+            <Text layoutX="10.0" layoutY="505.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dom: ">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <FlowPane.margin>
+                  <Insets left="60.0" />
+               </FlowPane.margin>
+            </Text>
+            <Text fx:id="domRemainingBlocksCount" layoutX="10.0" layoutY="671.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+         </children>
+      </FlowPane>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</VBox>
