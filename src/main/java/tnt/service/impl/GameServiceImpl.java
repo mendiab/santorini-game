@@ -3,6 +3,7 @@ package tnt.service.impl;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.ResourceBundle;
 import java.util.Set;
 
 import tnt.model.BoardPosition;
@@ -26,6 +27,7 @@ public class GameServiceImpl implements IGameService {
 	private IGameSettingsView settingsView;
 	private GameMoveEvaluator gameMoveEvaluator;
 	private static IGameService gameService;
+	private ResourceBundle bundle = ResourceBundle.getBundle("resourcebundle/resources");
 
 	// private GameBoard gameBoard;
 	
@@ -160,7 +162,8 @@ public class GameServiceImpl implements IGameService {
 			}
 
 		} else {
-			view.displayErrorMessage("You selected a wrong position for your worker!");
+			String text = bundle.getString("worker_wrong_position_selected");
+			view.displayErrorMessage(text);
 		}
 
 	}
