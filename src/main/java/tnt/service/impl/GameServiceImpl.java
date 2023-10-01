@@ -3,9 +3,7 @@ package tnt.service.impl;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.ResourceBundle;
 import java.util.Set;
-
 import tnt.model.BoardPosition;
 import tnt.model.BuildingBloc;
 import tnt.model.Game;
@@ -27,9 +25,6 @@ public class GameServiceImpl implements IGameService {
 	private IGameSettingsView settingsView;
 	private GameMoveEvaluator gameMoveEvaluator;
 	private static IGameService gameService;
-	private ResourceBundle bundle = ResourceBundle.getBundle("resourcebundle/resources");
-
-	// private GameBoard gameBoard;
 	
 	@Override
 	public void restartGame() {
@@ -41,21 +36,9 @@ public class GameServiceImpl implements IGameService {
 		initGame();
 	}
 
-	private GameServiceImpl(IGameView view) {
-		this();
-		this.view = view;
-	}
-
 	public static synchronized IGameService getInstance() {
 		if (gameService == null) {
 			gameService = new GameServiceImpl();
-		}
-		return gameService;
-	}
-
-	public static synchronized IGameService getInstance(IGameView view) {
-		if (gameService == null) {
-			gameService = new GameServiceImpl(view);
 		}
 		return gameService;
 	}
@@ -162,8 +145,8 @@ public class GameServiceImpl implements IGameService {
 			}
 
 		} else {
-			String text = bundle.getString("worker_wrong_position_selected");
-			view.displayErrorMessage(text);
+			String key = "game.board.wrong.position.for.worker";
+			view.displayErrorMessage(key);
 		}
 
 	}

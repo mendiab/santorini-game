@@ -28,3 +28,19 @@
 	}
 	
 Text fields can be configured with the wrap-text property in scene builder to allow multilines text
+
+1.Octobre
+
+ResourceBundle:
+--------------
+
+1. must be passed in the load method as parameter:
+
+FXMLLoader.load(getClass().getResource("/views/game-settings-view.fxml"), ResourceBundle.getBundle("resourcebundle/resources"));
+
+2. resourcebundle can also be used in scene builder. You've to select internationalization in text attribute og Gui-Element
+
+3. to be used in controller, it should be injected like this:
+
+@FXML
+    private ResourceBundle resources; // MENOUER: VERY IMPORTANT: to be recognized the ResourceBundle field MUST BE "resources". Any other name will not work!!

@@ -1,5 +1,7 @@
 package tnt.gui;
 
+import java.util.ResourceBundle;
+
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -23,7 +25,7 @@ public class GuiMain extends Application {
             Platform.exit();
         });
         stage.setResizable(true);
-        Parent settingsPane = FXMLLoader.load(getClass().getResource("/views/game-settings-view.fxml"));
+        Parent settingsPane = FXMLLoader.load(getClass().getResource("/views/game-settings-view.fxml"), ResourceBundle.getBundle("resourcebundle/resources"));
 		stage.setScene(new Scene(settingsPane));
         stage.show();
     }

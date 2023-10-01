@@ -2,9 +2,9 @@ package tnt.gui;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.ResourceBundle;
 import java.util.Set;
 
-import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,6 +22,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import tnt.factory.GameFactory;
 import tnt.gui.player.PieceFigureFatory;
 import tnt.gui.player.PlayerView;
 import tnt.gui.player.PlayersViews;
@@ -33,11 +34,13 @@ import tnt.model.Player;
 import tnt.model.Worker;
 import tnt.service.IGameService;
 import tnt.service.IGameView;
-import tnt.service.impl.GameServiceImpl;
 
 public class GameView implements IGameView {
 
 	private PlayersViews playersGui;
+	
+	@FXML
+    private ResourceBundle resources; // MENOUER: VERY IMPORTANT: to be recognized the ResourceBundle field MUST BE "resources". Any other name will not work!!
 	
 	@FXML
 	private AnchorPane gameMainPane;
@@ -80,7 +83,7 @@ public class GameView implements IGameView {
 	// Nested Components ###################
 
 	public GameView() {
-		gameService = GameServiceImpl.getInstance();
+		gameService = GameFactory.getGameService();
 		gameService.setGameView(this);
 		playersGui = new PlayersViews();
 	}
@@ -102,7 +105,6 @@ public class GameView implements IGameView {
 	
 	@FXML
 	public void restartGame() {
-		System.out.println("RestartGame called");
 		gameService.restartGame();
 	}
     
@@ -222,8 +224,6 @@ public class GameView implements IGameView {
 		int colIndex = 0;
 		for (Node node : this.gameBoardGridPane.getChildren()) {
 			boardGridArray[rowIndex][colIndex] = (StackPane) node;
-			// System.out.println(String.format("RowIndex: %d, ColIndex: %d node-hash: %d",
-			// rowIndex, colIndex, node.hashCode()));
 			node.setOnMouseClicked(handleGameBoardPositionOnClick());
 	
 			colIndex++;
@@ -273,8 +273,9 @@ public class GameView implements IGameView {
 	}
 
 	@Override
-	public void displayErrorMessage(String message) {
-		messageToPlayer.setText(String.format("ERROR-MESSAGE: %s", message));
+	public void displayErrorMessage(String key) {
+		String error = resources.getString(key);
+		messageToPlayer.setText(String.format("ERROR-MESSAGE: %s", error));
 	}
 
 	@Override

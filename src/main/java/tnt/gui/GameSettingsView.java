@@ -1,10 +1,10 @@
 package tnt.gui;
 
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
@@ -13,13 +13,16 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import tnt.factory.GameFactory;
 import tnt.model.EWorkerColor;
 import tnt.model.GameSettings;
 import tnt.service.IGameService;
 import tnt.service.IGameSettingsView;
-import tnt.service.impl.GameServiceImpl;
 
 public class GameSettingsView implements IGameSettingsView {
+	
+	@FXML
+    private ResourceBundle resources;
 
 	@FXML
 	private GridPane settingsPane;
@@ -52,7 +55,7 @@ public class GameSettingsView implements IGameSettingsView {
 
 	@FXML
 	private void initialize() {
-		gameService = GameServiceImpl.getInstance();
+		gameService = GameFactory.getGameService();
 		gameService.setSettingsView(this);
 	}
 
@@ -80,7 +83,7 @@ public class GameSettingsView implements IGameSettingsView {
 	public void startGame() {
 		AnchorPane gamePane;
 		try {
-			gamePane = FXMLLoader.load(getClass().getResource("/views/game-view.fxml"));
+			gamePane = FXMLLoader.load(getClass().getResource("/views/game-view.fxml"), resources);
 			Stage stage = (Stage) settingsPane.getScene().getWindow();
 			stage.setScene(new Scene(gamePane));
 		} catch (IOException e) {

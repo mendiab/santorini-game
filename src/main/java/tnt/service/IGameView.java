@@ -20,9 +20,9 @@ public interface IGameView {
 	
 	/**
 	 * inform the view component to display an error message
-	 * @param message this is the error message to display
+	 * @param key is the resource-bundle key of the error message to display
 	 */
-	void displayErrorMessage(String message);
+	void displayErrorMessage(String key);
 	
 	void displayInfoMessage(String message);
 	

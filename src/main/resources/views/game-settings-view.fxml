@@ -13,10 +13,10 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane fx:id="settingsPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tnt.gui.GameSettingsView">
+<GridPane fx:id="settingsPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="679.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tnt.gui.GameSettingsView">
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="360.0" minWidth="10.0" prefWidth="76.0" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="458.0" minWidth="10.0" prefWidth="206.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="360.0" minWidth="10.0" prefWidth="118.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="458.0" minWidth="10.0" prefWidth="240.0" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="458.0" minWidth="10.0" prefWidth="192.0" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="458.0" minWidth="10.0" prefWidth="129.0" />
   </columnConstraints>
@@ -28,16 +28,16 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Game Settings" textAlignment="CENTER" wrappingWidth="600.44140625" GridPane.columnSpan="2">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="%game.settings.title" textAlignment="CENTER" wrappingWidth="600.44140625" GridPane.columnSpan="2">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <Label text="Player-1" GridPane.rowIndex="1">
+      <Label text="%game.settings.player1.label" GridPane.rowIndex="1">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Label>
-      <Label layoutX="10.0" layoutY="202.0" text="Player-2" GridPane.rowIndex="2">
+      <Label layoutX="10.0" layoutY="202.0" text="%game.settings.player2.label" GridPane.rowIndex="2">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Label>
