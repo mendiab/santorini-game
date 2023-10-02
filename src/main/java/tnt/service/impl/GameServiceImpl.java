@@ -145,7 +145,7 @@ public class GameServiceImpl implements IGameService {
 			}
 
 		} else {
-			String key = "game.board.wrong.position.for.worker";
+			String key = "game.view.wrong.position.for.worker";
 			view.displayErrorMessage(key);
 		}
 

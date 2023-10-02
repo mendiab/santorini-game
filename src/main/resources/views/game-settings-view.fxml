@@ -28,16 +28,16 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="%game.settings.title" textAlignment="CENTER" wrappingWidth="600.44140625" GridPane.columnSpan="2">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="%game.settings.view.title" textAlignment="CENTER" wrappingWidth="600.44140625" GridPane.columnSpan="2">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <Label text="%game.settings.player1.label" GridPane.rowIndex="1">
+      <Label text="%game.settings.view.player1.label" GridPane.rowIndex="1">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Label>
-      <Label layoutX="10.0" layoutY="202.0" text="%game.settings.player2.label" GridPane.rowIndex="2">
+      <Label layoutX="10.0" layoutY="202.0" text="%game.settings.view.player2.label" GridPane.rowIndex="2">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Label>
