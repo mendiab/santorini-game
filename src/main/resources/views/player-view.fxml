@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" prefHeight="327.0" prefWidth="107.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tnt.gui.player.PlayerView">
+<VBox alignment="CENTER" prefHeight="327.0" prefWidth="107.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="santorini.gui.player.PlayerView">
    <children>
       <FlowPane fx:id="playerFlowPane" hgap="10.0" prefHeight="326.0" prefWidth="107.0" style="-fx-border-color: black; -fx-border-width: 2;" vgap="10.0">
          <children>

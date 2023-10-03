@@ -6,9 +6,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <!-- the id of the project's group -->
-    <groupId>tnt</groupId>
+    <groupId>santorini</groupId>
     <!-- the id of the artifact (project) -->
-    <artifactId>tnt</artifactId>
+    <artifactId>santorini</artifactId>
     <!-- the version of the artifact under the specified group -->
     <version>0.1-SNAPSHOT</version>
 
@@ -107,13 +107,13 @@
                     <!-- Removes the man directory in the resulting runtime image -->
                     <noManPages>true</noManPages>
                     <!-- Adds a launcher script with the given name -->
-                    <launcher>tnt</launcher>
+                    <launcher>santorini</launcher>
                     <!-- The name of the folder with the resulting runtime image -->
-                    <jlinkImageName>tnt</jlinkImageName>
+                    <jlinkImageName>santorini</jlinkImageName>
                     <!-- Create a zip of the resulting runtime image -->
-                    <jlinkZipName>tnt</jlinkZipName>
+                    <jlinkZipName>santorini</jlinkZipName>
                     <!-- The main class, fully qualified name -->
-                    <mainClass>tnt/tnt.Main</mainClass>
+                    <mainClass>santorini/santorini.Main</mainClass>
                     <!-- Make command line arguments setable with -Dargs="" -->
                     <commandlineArgs>${args}</commandlineArgs>
                 </configuration>
@@ -182,8 +182,8 @@
                 <configuration>
                     <excludes>
                         <!-- Ignore GUI classes for coverage -->
-                        <exclude>tnt/gui/**/*</exclude>
-                        <exclude>tnt/Main.class</exclude>
+                        <exclude>santorini/gui/**/*</exclude>
+                        <exclude>santorini/Main.class</exclude>
                     </excludes>
                 </configuration>
             </plugin>
