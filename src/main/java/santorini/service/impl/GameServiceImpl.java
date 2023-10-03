@@ -145,8 +145,7 @@ public class GameServiceImpl implements IGameService {
 			}
 
 		} else {
-			String key = "game.view.wrong.position.for.worker";
-			view.displayErrorMessage(key);
+			view.displayErrorMessage(EnumResourceBundleKey.GAME_VIEW_WRONG_POSITION_FOR_WORKER.getKey());
 		}
 
 	}
@@ -181,8 +180,7 @@ public class GameServiceImpl implements IGameService {
 			game.setNextAction(GameNextAction.WORKER_TO_BE_MOVED_SELECTION);
 			changePlayerTurn();
 		} else {
-			view.displayErrorMessage(
-					"The position you selected for your building-bloc is neither valid nor hosting a compatible building-bloc level!");
+			view.displayErrorMessage(EnumResourceBundleKey.GAME_VIEW_WRONG_POSITION_FOR_BUILDING_BLOC.getKey());
 		}
 	}
 
@@ -191,8 +189,7 @@ public class GameServiceImpl implements IGameService {
 			moveWorkerToBoardPosition(position, worker);
 			view.moveWorkerToSelectedPosition(worker, position);
 		} else {
-			view.displayErrorMessage(
-					"The position you selected for your worker is neither free nor hosting a compatible building-bloc level!");
+			view.displayErrorMessage(EnumResourceBundleKey.GAME_VIEW_WRONG_POSITION_FOR_WORKER.getKey());
 		}
 	}
 
@@ -278,19 +275,18 @@ public class GameServiceImpl implements IGameService {
 						view.updatePossibleMovePositionsDisplay(possibleMovePositions);
 						game.setNextAction(GameNextAction.CHECK_PLAYER_MOVE_POSITION_SELECTION);
 					} else {
-						view.displayErrorMessage(
-								"With the current selected worker, there is no possible move. Try with the other worker!");
+						view.displayErrorMessage(EnumResourceBundleKey.GAME_VIEW_NO_POSITION_AVAILABLE_FOR_SELECTED_WORKER.getKey());
 					}
 				} else {
 					String gameEndMessage = String.format(
 							"You have loosed the game. You have no possible move for your workers. Winner is Player: %s",
 							getOtherPlayer().getPlayerName());
 					game.setNextAction(GameNextAction.RESTART_GAME);
-					view.displayErrorMessage(gameEndMessage);
+					view.displayInfoMessage(gameEndMessage);
 				}
 				
 			} else {
-				view.displayErrorMessage("Selected Worker doesn't belong to the current player!");
+				view.displayErrorMessage(EnumResourceBundleKey.GAME_VIEW_SELECTED_WORKER_NOT_OWNED_BY_CURRENT_PLAYER.getKey());
 			}
 			break;
 
@@ -321,14 +317,13 @@ public class GameServiceImpl implements IGameService {
 
 			if (buidingBlocMoveIsPossible) {
 				if (!buildingBlocs.isBuildingBlocWithGivenLevelAvailable(level)) {
-					view.displayErrorMessage(
-							"For this kind of Building Blocks, there is no one available!\n Choose another one!");
+					view.displayErrorMessage(EnumResourceBundleKey.GAME_VIEW_BUILDING_BLOC_NOT_AVAILABLE.getKey());
 					return;
 				}
 
 				Set<BoardPosition> possiblePositions = gameMoveEvaluator.findPossibleNeighbourMovePositionsForBuildingBloc(level);
 				if (possiblePositions.isEmpty()) {
-					view.displayErrorMessage("No position available for building bloc. Choose another one!");
+					view.displayErrorMessage(EnumResourceBundleKey.GAME_VIEW_NO_POSITION_AVAILABLE_FOR_SELECTED_BUILDING_BLOC.getKey());
 					return;
 				}
 
