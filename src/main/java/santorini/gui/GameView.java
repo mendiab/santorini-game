@@ -7,10 +7,8 @@ import java.util.Set;
 
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.effect.InnerShadow;
@@ -21,8 +19,6 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
-import santorini.factory.GameFactory;
 import santorini.gui.player.PieceFigureFatory;
 import santorini.gui.player.PlayerView;
 import santorini.gui.player.PlayersViews;
@@ -36,6 +32,8 @@ import santorini.service.IGameService;
 import santorini.service.IGameView;
 
 public class GameView implements IGameView {
+	
+	private GuiMain parentMainGui;
 
 	private PlayersViews playersGui;
 	
@@ -83,7 +81,7 @@ public class GameView implements IGameView {
 	// Nested Components ###################
 
 	public GameView() {
-		gameService = GameFactory.getGameService();
+		gameService = GuiMain.GAME_SERVICE;
 		gameService.setGameView(this);
 		playersGui = new PlayersViews();
 	}
@@ -111,11 +109,9 @@ public class GameView implements IGameView {
 	@Override
 	public void returnToGameSettingsView() {
 		try {
-			Parent gameSettingsPane = FXMLLoader.load(getClass().getResource("/views/game-settings-view.fxml"));
-			Stage stage = (Stage) gameMainPane.getScene().getWindow();
-			stage.setScene(new Scene(gameSettingsPane));
-			
+			parentMainGui.gotoGameSettingsView();
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -328,6 +324,10 @@ public class GameView implements IGameView {
 			StackPane node = boardGridArray[boardPosition.getRow()][boardPosition.getColumn()];
 			node.setEffect(null);
 		}
+	}
+
+	public void setMainGui(GuiMain mainGui) {
+		this.parentMainGui = mainGui;
 	}
 
 }

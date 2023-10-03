@@ -4,22 +4,19 @@ import java.io.IOException;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
-import santorini.factory.GameFactory;
 import santorini.model.EWorkerColor;
 import santorini.model.GameSettings;
 import santorini.service.IGameService;
 import santorini.service.IGameSettingsView;
 
 public class GameSettingsView implements IGameSettingsView {
+	
+	private GuiMain parentMainGui;
 	
 	@FXML
     private ResourceBundle resources;
@@ -55,7 +52,7 @@ public class GameSettingsView implements IGameSettingsView {
 
 	@FXML
 	private void initialize() {
-		gameService = GameFactory.getGameService();
+		gameService = GuiMain.GAME_SERVICE;
 		gameService.setSettingsView(this);
 	}
 
@@ -78,14 +75,11 @@ public class GameSettingsView implements IGameSettingsView {
 		gameSettings.setSecondPlayerWorkerColor(secondPlayerColor);
 		return gameSettings;
 	}
-
+	
 	@Override
 	public void startGame() {
-		AnchorPane gamePane;
 		try {
-			gamePane = FXMLLoader.load(getClass().getResource("/views/game-view.fxml"), resources);
-			Stage stage = (Stage) settingsPane.getScene().getWindow();
-			stage.setScene(new Scene(gamePane));
+			parentMainGui.gotoGameView();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -95,6 +89,10 @@ public class GameSettingsView implements IGameSettingsView {
 	@Override
 	public void displayGameSettingsErrorMessage(String errorMessage) {
 		validationErrorMessage.setText(errorMessage);
+	}
+
+	public void setMainGui(GuiMain mainGui) {
+		this.parentMainGui = mainGui;
 	}
 
 }
